@@ -86,7 +86,7 @@ namespace AutoStart
                         listBox1.Invoke(mydelegate, new object[] { listBox1, string.Format("凌晨{0}点退出循环，不再重启",textBox1.Text) });
                         break;
                     }
-                    StartProcess(@"D:\GitPro\BrowserWebSite(2)\BrowserWebSite\bin\Debug\BrowserWebSite.exe");
+                    StartProcess(@"D:\GitPro\GitHub\BrowserWebSite\BrowserWebSite\bin\Debug\BrowserWebSite.exe");
                     
                     k++;
                     listBox1.Invoke(mydelegate, new object[] { listBox1, string.Format("at {0} 第 {1}次重启", DateTime.Now, k) });
