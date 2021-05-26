@@ -105,7 +105,7 @@ namespace BrowserWebSite
                 {
                     if (objSpan[i].InnerText == "刷新该页面。")
                     {
-                        Application.Exit();
+                        existRefresh = true;
                     }
                 }
                 for (var i = 0; i < objSpan.Count; i++)
@@ -126,6 +126,7 @@ namespace BrowserWebSite
         List<string> listSites = new List<string>();
         List<string> listVistedSites = new List<string>();
         int loopCount = 0;
+        bool existRefresh = false;
         Action<Label, string> mydelegate = (label, txt) =>
         {
             label.Text = txt;
@@ -179,7 +180,14 @@ namespace BrowserWebSite
                         {
 
                         }
-                        Thread.Sleep(new Random(Guid.NewGuid().GetHashCode()).Next(7, 12) * 1000);
+                        if (existRefresh)
+                        {
+                            Thread.Sleep(300000);
+                        }
+                        else
+                        {
+                            Thread.Sleep(new Random(Guid.NewGuid().GetHashCode()).Next(7, 12) * 1000);
+                        }
                     }
                 });
             }
