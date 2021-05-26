@@ -190,7 +190,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Name = "Form1";
             this.Text = "自动浏览百度经验";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
