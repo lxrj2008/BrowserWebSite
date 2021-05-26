@@ -101,6 +101,13 @@ namespace BrowserWebSite
             {
                 var objDoc = webBrowser1.Document;
                 var objSpan = objDoc.GetElementsByTagName("span");
+                for (var i = 0; i < objSpan.Count;i++ )
+                {
+                    if (objSpan[i].InnerText == "刷新该页面。")
+                    {
+                        Application.Exit();
+                    }
+                }
                 for (var i = 0; i < objSpan.Count; i++)
                 {
                     if (objSpan[i].InnerText == "展开阅读全部")
@@ -108,6 +115,7 @@ namespace BrowserWebSite
                         objSpan[i].Click += ReadMoreEventHandler;
                         objSpan[i].InvokeMember("click");
                     }
+
                 }
             }
             catch (Exception ex)
