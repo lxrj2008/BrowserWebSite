@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrowserWebSite", "BrowserWe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoStart", "AutoStart\AutoStart.csproj", "{A270A0A7-7B6F-4D46-BAA5-0BF1B9412962}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteWebSiteToTextBox", "WriteWebSiteToTextBox\WriteWebSiteToTextBox.csproj", "{BA6ABD6B-AB51-49E8-8498-8244BAA96442}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A270A0A7-7B6F-4D46-BAA5-0BF1B9412962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A270A0A7-7B6F-4D46-BAA5-0BF1B9412962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A270A0A7-7B6F-4D46-BAA5-0BF1B9412962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA6ABD6B-AB51-49E8-8498-8244BAA96442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6ABD6B-AB51-49E8-8498-8244BAA96442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6ABD6B-AB51-49E8-8498-8244BAA96442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6ABD6B-AB51-49E8-8498-8244BAA96442}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
