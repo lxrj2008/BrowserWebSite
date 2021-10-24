@@ -24,10 +24,15 @@ namespace WriteWebSiteToTextBox
         {
             txtbox.Text = txt;
         };
-        private void button1_Click(object sender, EventArgs e)
+        Action<ListBox, string> listboxDelegate = (lbox, txt) =>
+        {
+            lbox.Items.Add(txt);
+        };
+        private void ReadAllWebsites()
         {
             try
             {
+                beginTime = DateTime.Now;
                 foreach (var str in System.IO.File.ReadAllLines(Directory.GetCurrentDirectory() + "\\WebSites.txt", Encoding.Default))
                 {
                     if (!listSites.Contains(str))
@@ -42,6 +47,8 @@ namespace WriteWebSiteToTextBox
             }
         }
         int i = -1;
+        DateTime beginTime = DateTime.Now;
+        DateTime endTime = DateTime.Now;
         private void Form1_Load(object sender, EventArgs e)
         {
             Task.Run(() =>
@@ -64,9 +71,10 @@ namespace WriteWebSiteToTextBox
                         }
                         else
                         {
+                            endTime = DateTime.Now;
                             i++;
-                            textBox2.Invoke(mydelegate, new object[] { textBox2, string.Format("第{0}轮完成！", i) });
-                            button1_Click(null, null);
+                            listBox1.Invoke(listboxDelegate, new object[] { listBox1, string.Format("{2}:第{0}轮完成,耗时{1}分钟",i,endTime.Subtract(beginTime).TotalMinutes,DateTime.Now ) });
+                            ReadAllWebsites();
                         }
                         
                     }
