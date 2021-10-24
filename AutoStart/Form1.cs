@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -68,25 +69,41 @@ namespace AutoStart
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             Task.Run(() =>
             {
                 while (true)
                 {
-                    KillProcess("BrowserWebSite");
-                    Thread.Sleep(5000);
+                    KillProcess("BrowserWebSite1");
+                    Thread.Sleep(500);
                     if (DateTime.Now.Hour == int.Parse(textBox1.Text))
                     {
                         listBox1.Invoke(mydelegate, new object[] { listBox1, string.Format("凌晨{0}点退出循环，不再重启",textBox1.Text) });
                         break;
                     }
-                    StartProcess(@"D:\GitPro\GitHub\BrowserWebSite\BrowserWebSite\bin\Debug\BrowserWebSite.exe");
+                    if(!string.IsNullOrEmpty(txtpath1.Text))
+                    {
+                        if(File.Exists(txtpath1.Text))
+                        {
+                            StartProcess(txtpath1.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("程序路径不存在！");
+                        }
+                    }
+                    if(!string.IsNullOrEmpty(txtpath2.Text))
+                    {
+                        if (File.Exists(txtpath2.Text))
+                        {
+                            StartProcess(txtpath1.Text);
+                        }
+                        else
+                        {
+                            MessageBox.Show("程序路径不存在！");
+                        }
+                    }
                     
                     k++;
                     listBox1.Invoke(mydelegate, new object[] { listBox1, string.Format("at {0} 第 {1}次重启", DateTime.Now, k) });

@@ -33,6 +33,7 @@ namespace WriteWebSiteToTextBox
                     if (!listSites.Contains(str))
                         listSites.Add(str);
                 }
+                textBox3.Text = listSites.Count.ToString();
                 listVistedSites.Clear();
             }
             catch (Exception ex)
